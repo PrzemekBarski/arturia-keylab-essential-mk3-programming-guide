@@ -2,7 +2,7 @@
 
 Welcome hackers!
 
-This is an unofficial guide to programming Keylab Essential MK3 keyboard under DAW mode. I was able to put it together by reverse engineering the Logic Pro and FL Studio DAW integration scripts. I hope you'll find it useful.
+This is an unofficial guide to programming the Keylab Essential MK3 keyboards under DAW mode. I was able to put it together by reverse engineering the Logic Pro and FL Studio DAW integration scripts. I hope you'll find it useful.
 
 ## General
 
