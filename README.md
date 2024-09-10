@@ -23,7 +23,7 @@ DAW disconnection:
 RGB Button:
 
     04 01 16 (button_id) (r) (g) (b)
-    
+
     //  button_id:
     //
     //    MIDI CH:     00
@@ -66,7 +66,7 @@ RGB Button:
 Switching keyboard presets:
 
     21 11 40 02 00 (preset_index)
-    
+
     //  preset_index: 00 - 07
 
 
@@ -162,13 +162,13 @@ Icon on the top, 2 lines of text on the bottom, Header OR Footer allowed):
 Header:
 
     04 01 60 01 02 (line_1) 00 00
-    
+
     //  line_1: ASCII string (18 characters)
 
 Footer:
 
     04 01 60 03 (Button1) (Button2) (Button3) (Button4)
-    
+
     //  Button creation process is explained below
 
 Buttons:
@@ -177,7 +177,7 @@ Buttons:
     Button2:   2X (data) 00
     Button3:   3X (data) 00
     Button4:   4X (data) 00
-    
+
     //  X: button type (0: state, 1: text, 2: icon)
     //  data: state (?) | text (ASCII string) | icon (00 - 4B, list below)
     //
