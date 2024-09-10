@@ -149,12 +149,6 @@ Footer:
     
     //  Button creation is explained below
 
-
-// X: button type (0: state, 1: text, 2: icon)
-// data: state (?) | text (ASCII string) | icon (00 - 4B)
-//
-// example: 22 03 00 (Button 2 with Bass icon)
-
 Buttons:
 
     Button1:   1X (data) 00
