@@ -79,59 +79,81 @@ To display something on the screen you need to:
 
 ### Screen types
 
-Theoretically, `line_1` and `line_2` will always accept 18 characters, but you shouldn't use more than 12 on K, F and P screen types. TI2L will fit 12 characters on `line_1` and 18 characters on `line_2`. P2L will fit 14 characters on `line_1` and 18 on `line_2`. If you use both Header and Footer on screen type TI2L, `line_1` and `line_2` will be squished. If you use exceed 18 characters on any line, the text will be trimmed and ellipsis will be added after 18th character. I don't know what is the difference between F1l and 1L, or 2L and 2LS, they look the same to me.
+Theoretically, `line_1` and `line_2` will always accept 18 characters, but you shouldn't use more than 12 on K, F and P screen types. TI2L will fit 12 characters on `line_1` and 18 characters on `line_2`. P2L will fit 14 characters on `line_1` and 18 on `line_2`. If you use both Header and Footer on screen type TI2L, `line_1` and `line_2` will appear squished. If you exceed 18 characters on any line the text will be trimmed and ellipsis will be added after 18th character. I don't know what is the difference between F1l and 1L, or 2L and 2LS, they look the same to me.
 
     //  line_1: ASCII string (18 characters)
     //  line_2: ASCII string (18 characters)
     //  transient: 00 (screen is permanent) or 01 (screen is temporary)
     //  hw_value: 00 - 7F  (knob, fader or pad value)
-    //  icon: 00 - 4B (there is alist of available icons later in this document)
+    //  icon: 00 - 4B (there is a list of available icons later in this document)
 
-F1L (1 line of text centeered, Header and Footer allowed):
+#### F1L
+
+1 line of text centeered, Header and Footer allowed
 
     04 01 60 10 01 (line_1) 00 (transient)
 
-1L  (1 line of text centered, Header and Footer allowed):
+#### 1L
+
+1 line of text centered, Header and Footer allowed
 
     04 01 60 11 01 (line_1) 00 (transient)
 
-2L  (2 lines of text centered, Header and Footer allowed):
+#### 2L
+
+2 lines of text centered, Header and Footer allowed
 
     04 01 60 12 01 (line_1) 00 02 (line_2) 00 (transient)
 
-2LS (2 lines of text centered, Header and Footer allowed):
+#### 2LS
+
+2 lines of text centered, Header and Footer allowed
 
     04 01 60 13 01 (line_1) 00 02 (line_2) 00
 
-K   (Knob on the left, 2 lines of text on the right):
+#### K
+
+Knob on the left, 2 lines of text on the right
 
     04 01 60 14 01 (line_1) 00 02 (line_2) 00 03 (hw_value) 00 (transient)
 
-F   (Fader on the left, 2 lines of text on the right):
+#### F
+
+Fader on the left, 2 lines of text on the right
 
     04 01 60 15 01 (line_1) 00 02 (line_2) 00 03 (hw_value) 00 (transient)
 
-P   (Pad on the left, 2 lines of text on the right):
+#### P
+
+Pad on the left, 2 lines of text on the right
 
     04 01 60 16 01 (line_1) 00 02 (line_2) 00 03 (hw_value) 00 (transient)
 
-P2L (Pop-up message, 2 lines of text centered:
+#### P2L
+
+Pop-up message, 2 lines of text centered
 
     04 01 60 17 01 (line_1) 00 02 (line_2) 00 01
 
-B2L (2 lines of text centered and blinking, Header and Footer allowed):
+#### B2L
+
+2 lines of text centered and blinking, Header and Footer allowed
 
     04 01 60 18 01 (line_1) 00 02 (line_2) 00 (transient)
 
-LI2L (Icon on the left, 2 lines of text on the right, Header and Footer allowed):
+#### LI2L
+
+Icon on the left, 2 lines of text on the right, Header and Footer allowed
 
     04 01 60 19 01 (line_1) 00 02 (line_2) 00 03 (icon) 00 (transient)
 
-TI2L (Icon on the top, 2 lines of text on the bottom, Header OR Footer allowed):
+#### TI2L
+
+Icon on the top, 2 lines of text on the bottom, Header OR Footer allowed):
 
     04 01 60 1A 01 (line_1) 00 02 (line_2) 00 03 (icon) 00 (transient)
 
-Clear screen:
+#### Clear screen:
 
     04 01 60 61
 
