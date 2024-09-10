@@ -77,43 +77,6 @@ To display something on the screen you need to:
 1. Set one of the screen types (10 - 1A) and it's contents
 2. (Optional) Set header and/or footer. Only some of the screen types allow headers and footers.
 
-Header:
-
-    04 01 60 01 02 (line_1) 00 00
-    
-    //  line_1: ASCII string (18 characters)
-
-Footer:
-
-    04 01 60 03 (Button1) (Button2) (Button3) (Button4)
-    
-    //  Button creation is explained below
-
-
-// X: button type (0: state, 1: text, 2: icon)
-// data: state (?) | text (ASCII string) | icon (00 - 4B)
-//
-// example: 22 03 00 (Button 2 with Bass icon)
-
-Buttons:
-
-    Button1:   1X (data) 00
-    Button2:   2X (data) 00
-    Button3:   3X (data) 00
-    Button4:   4X (data) 00
-    
-    //  X: button type (0: state, 1: text, 2: icon)
-    //  data: state (?) | text (ASCII string) | icon (00 - 4B)
-    //
-    //  example: 22 03 00 (Button 2 with Bass icon)
-
-
-// line_1:    ASCII string
-// line_2:    ASCII string
-// hw_value:  00 - 7F
-// icon:      00 - 4B
-// transient: 00 - 01
-
 ### Screen types
 
 Theoretically, `line_1` and `line_2` will always accept 18 characters, but you shouldn't use more than 12 on K, F and P screen types. TI2L will fit 12 characters on `line_1` and 18 characters on `line_2`. P2L will fit 14 characters on `line_1` and 18 on `line_2`. If you use both Header and Footer on screen type TI2L, `line_1` and `line_2` will be squished. If you use exceed 18 characters on any line, the text will be trimmed and ellipsis will be added after 18th character. I don't know what is the difference between F1l and 1L, or 2L and 2LS, they look the same to me.
@@ -121,6 +84,8 @@ Theoretically, `line_1` and `line_2` will always accept 18 characters, but you s
     //  line_1: ASCII string (18 characters)
     //  line_2: ASCII string (18 characters)
     //  transient: 00 (screen is permanent) or 01 (screen is temporary)
+    //  hw_value: 00 - 7F  (knob, fader or pad value)
+    //  icon: 00 - 4B (there is alist of available icons later in this document)
 
 F1L (1 line of text centeered, Header and Footer allowed):
 
@@ -169,6 +134,38 @@ TI2L (Icon on the top, 2 lines of text on the bottom, Header OR Footer allowed):
 Clear screen:
 
     04 01 60 61
+
+### Header and Footer
+
+Header:
+
+    04 01 60 01 02 (line_1) 00 00
+    
+    //  line_1: ASCII string (18 characters)
+
+Footer:
+
+    04 01 60 03 (Button1) (Button2) (Button3) (Button4)
+    
+    //  Button creation is explained below
+
+
+// X: button type (0: state, 1: text, 2: icon)
+// data: state (?) | text (ASCII string) | icon (00 - 4B)
+//
+// example: 22 03 00 (Button 2 with Bass icon)
+
+Buttons:
+
+    Button1:   1X (data) 00
+    Button2:   2X (data) 00
+    Button3:   3X (data) 00
+    Button4:   4X (data) 00
+    
+    //  X: button type (0: state, 1: text, 2: icon)
+    //  data: state (?) | text (ASCII string) | icon (00 - 4B, list below)
+    //
+    //  example: 22 03 00 (Button 2 with Bass icon)
 
 
 ### List of icons
