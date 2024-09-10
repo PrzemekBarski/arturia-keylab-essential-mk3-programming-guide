@@ -147,7 +147,7 @@ Footer:
 
     04 01 60 03 (Button1) (Button2) (Button3) (Button4)
     
-    //  Button creation is explained below
+    //  Button creation process is explained below
 
 Buttons:
 
