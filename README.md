@@ -98,9 +98,9 @@ Footer:
 Buttons:
 
     Button1:   1X (data) 00
-    Button2:   1X (data) 00
-    Button3:   1X (data) 00
-    Button4:   1X (data) 00
+    Button2:   2X (data) 00
+    Button3:   3X (data) 00
+    Button4:   4X (data) 00
     
     //  X: button type (0: state, 1: text, 2: icon)
     //  data: state (?) | text (ASCII string) | icon (00 - 4B)
