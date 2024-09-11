@@ -61,6 +61,17 @@ RGB Button:
     //
     //  r,g,b: 00 - 7F
 
+## Knobs
+
+The knobs on Keylab Essential MKIII are endless encoders, but they send absolute 0 - 127 values on DAW mode. The current values are stored internally. If you need to update these values you need to use the code presented below.
+
+Update encoder value:
+
+    02 0F 40 (knob_index) (value)
+
+    //  knob_index: 03 - 0B (Knob 1 - 9 incremented by 2)
+    //  value: 00 - 7F (new encoder value)
+
 ## Presets
 
 Switching keyboard presets:
