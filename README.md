@@ -170,7 +170,7 @@ Icon on the top, 2 lines of text on the bottom, Header OR Footer allowed):
 
 ### Header and Footer
 
-Header:
+Header (max. 18 letters):
 
     04 01 60 01 02 (line_1) 00 00
 
@@ -181,6 +181,8 @@ Footer:
     04 01 60 03 (Button1) (Button2) (Button3) (Button4)
 
     //  Button creation process is explained below
+
+Be very carefull with button text length, if you exceed the maximum of 7 letters the button won't render at all!
 
 Buttons:
 
