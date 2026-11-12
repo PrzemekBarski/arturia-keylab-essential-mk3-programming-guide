@@ -49,7 +49,7 @@ RGB Button:
     //    Record:      16
     //    Tap Tempo:   17
     //
-    //    Context 1-4: 18 - 21
+    //    Context 1-4: 18 - 1B
     //
     //    Prog:        06
     //    Part:        07
